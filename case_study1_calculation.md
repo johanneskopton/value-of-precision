@@ -20,7 +20,7 @@ $$
 u(x) = u_g(x) - u_f(x)
 $$
 
-![Response model for the winter wheat case study. a) Yield response curve fitted to experimental data from the literature. b) Economic revenue from yield and fertilizer costs. c) The resulting economic response curve. d) Marginal costs and marginal gains from increasing fertilizer dosage by 1 kg per ha.](tex/imgs/synplot1.png)
+<div height="600px">![Response model for the winter wheat case study. a) Yield response curve fitted to experimental data from the literature. b) Economic revenue from yield and fertilizer costs. c) The resulting economic response curve. d) Marginal costs and marginal gains from increasing fertilizer dosage by 1 kg per ha.](tex/imgs/synplot1.png)</div>
 
 
 The target fertilizer dosage $x_\text{target}$ that maximizes profit is then calculated using the zero of the derivative with respect to $x$, i.e. the fertilizer dosage, where the marginal costs exceed the marginal benefits as shown in Figure 1 d).
@@ -44,9 +44,10 @@ $$
 $$
 \iff x_\text{target} =  -\dfrac{1}{b} \ln(-\dfrac{c_f}{c_g}\cdot\dfrac{1}{ab})
 $$
+
 In the example, we get an optimal dosage target (given perfect precision) of $x_\text{target} = 206.9 \ \text{kg}_\text{N} / \text{ha}$.
 
-![a) Probability distribution for imprecise dosage. b) Graphical representation of the calculation for the Expected Value of Perfect Precision (EVPP) as the difference between profits given precise and imprecise dosage.](tex/imgs/synplot2.png)
+<div height="600px">![a) Probability distribution for imprecise dosage. b) Graphical representation of the calculation for the Expected Value of Perfect Precision (EVPP) as the difference between profits given precise and imprecise dosage.](tex/imgs/synplot2.png)</div>
 
 Now we assume imprecise dosage as a normally distributed random variable $X \sim \mathcal{N}(\mu, \sigma)$ with mean $\mu$, standard deviation $\sigma$ and probability density function $f_X(x, \mu, \sigma)$. (Note: this neglects the fact, that fertilizer dosage is always positive in reality.) This is illustrated in Figure 2 a) with an exemplary standard deviation of $\sigma = 50  \ \text{kg}_\text{N} / \text{ha}$.
 
@@ -63,6 +64,7 @@ $$
 $$
 = c_g \cdot a \cdot e^{\frac{b^2 \sigma^2}{2}} e^{-b \mu} + c_g \cdot d - c_f \cdot \mu
 $$
+
 The integral was solved using the excellent open source Computer Algebra System *Maxima*.
 
 But $u(x)$ is not symmetrical around $x_\text{target}$, so the optimal mean $x_\text{target}(\sigma)$ of a normal distribution with $\sigma > 0$ is different from $x_\text{target}$ (see Figure 1 a and b).

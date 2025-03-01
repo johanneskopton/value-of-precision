@@ -21,7 +21,7 @@ u(x) = u_g(x) - u_f(x)
 $$
 
 <p align="center">
-<img alt="Response model for the winter wheat case study. a) Yield response curve fitted to experimental data from the literature. b) Economic revenue from yield and fertilizer costs. c) The resulting economic response curve. d) Marginal costs and marginal gains from increasing fertilizer dosage by 1 kg per ha." src="tex/imgs/synplot1.png" height="600"></p>
+<img alt="Response model for the winter wheat case study. a) Yield response curve fitted to experimental data from the literature. b) Economic revenue from yield and fertilizer costs. c) The resulting economic response curve. d) Marginal costs and marginal gains from increasing fertilizer dosage by 1 kg per ha." src="imgs/synplot1.png" height="600"></p>
 
 > Response model for the winter wheat case study. a) Yield response curve fitted to experimental data from the literature. b) Economic revenue from yield and fertilizer costs. c) The resulting economic response curve. d) Marginal costs and marginal gains from increasing fertilizer dosage by 1 kg per ha.
 
@@ -52,7 +52,7 @@ $$
 In the example, we get an optimal dosage target (given perfect precision) of $x_\text{target} = 206.9 \ \text{kg}_\text{N} / \text{ha}$.
 
 <p align="center">
-<img alt="a) Probability distribution for imprecise dosage. b) Graphical representation of the calculation for the Expected Value of Perfect Precision (EVPP) as the difference between profits given precise and imprecise dosage." src="tex/imgs/synplot2.png" height="600"></p>
+<img alt="a) Probability distribution for imprecise dosage. b) Graphical representation of the calculation for the Expected Value of Perfect Precision (EVPP) as the difference between profits given precise and imprecise dosage." src="imgs/synplot2.png" height="600"></p>
 
 >a) Probability distribution for imprecise dosage. b) Graphical representation of the calculation for the Expected Value of Perfect Precision (EVPP) as the difference between profits given precise and imprecise dosage.
 

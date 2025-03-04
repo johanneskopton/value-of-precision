@@ -37,7 +37,7 @@ The target fertilizer dosage $x_\text{target,PP}$ that maximizes profit is then 
 \caption{a) Probability distribution for imprecise dosage. b) Graphical representation of the calculation for the Expected Value of Perfect Precision (EVPP) as the difference between profits given precise and imprecise dosage.}
 \end{figure}
 
-Now we assume imprecise dosage as a normally distributed random variable $X \sim \mathcal{N}(\mu, \sigma)$ with mean $\mu$, standard deviation $\sigma$ and probability density function $f_X(x, \mu, \sigma)$. (Note: this neglects the fact, that fertilizer dosage is always positive in reality.) This is illustrated in Figure 2 a) with an exemplary standard deviation of $\sigma = 50 \ \text{kg}_\text{N} / \text{ha}$.
+Now we assume imprecise dosage as a normally distributed random variable $X \sim \mathcal{N}(\mu, \sigma)$ with mean $\mu$, standard deviation $\sigma$ and probability density function $f_X(x, \mu, \sigma)$. (Note: this neglects the fact that fertilizer dosage is always positive in reality.) This is illustrated in Figure 2 a) with an exemplary standard deviation of $\sigma = 50 \ \text{kg}_\text{N} / \text{ha}$.
 
 Then the expected utility given this imprecise dosage $E[u(x=X(\mu, \sigma))]$ can be calculated as follows:
 
@@ -71,4 +71,6 @@ The difference between the utility given precise dosage $u(x_\text{target,PP})$ 
     &= \frac{b c_{f} \sigma^{2}}{2}
 \end{align}
 
-This expression drastically simplifies in Eq. 20, so in the end, the EVPP only depends on the exponential coefficient $b$ in the fertilizer response, the cost of fertilizer $c_f$ and the variance of the fertilization dosage $\sigma^2$, and it does so linearly. Interestingly, the the EVPP does neither depend on the yield given fertilizer saturation ($a$ and $d$) nor on the harvest selling price $c_g$.
+This expression drastically simplifies in Eq. 20, so in the end, the EVPP only depends on the exponential coefficient
+$b$ in the fertilizer response, the cost of fertilizer $c_f$ and the variance of the fertilization dosage $\sigma^2$,
+and it does so linearly. Interestingly, the the EVPP neither depends on the yield given fertilizer saturation ($a$ and $d$) nor on the harvest selling price $c_g$.

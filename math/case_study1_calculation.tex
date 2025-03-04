@@ -21,15 +21,15 @@ The utility $u(x)$ is the profit, modeled as revenue $u_g(x)$ minus fertilizer c
 \caption{Response model for the winter wheat case study. a) Yield response curve fitted to experimental data from the literature. b) Economic revenue from yield and fertilizer costs. c) The resulting economic response curve. d) Marginal costs and marginal gains from increasing fertilizer dosage by 1 kg per ha.}
 \end{figure}
 
-The target fertilizer dosage $x_\text{target}$ that maximizes profit is then calculated using the zero of the derivative with respect to $x$, i.e.~the fertilizer dosage, where the marginal costs exceed the marginal benefits as shown in Figure 1 d).
+The target fertilizer dosage $x_\text{target,PP}$ that maximizes profit is then calculated using the zero of the derivative with respect to $x$, i.e.~the fertilizer dosage, where the marginal costs exceed the marginal benefits as shown in Figure 1 d).
 
 \begin{align}
-    x_\text{target} &= \text{arg}\max_x u(x) \\
-    \iff \frac{\partial u(x)}{\partial x} \mid_{x = x_\text{target}} &= 0\\
-    \iff \frac{\partial u_g(x)}{\partial x} \mid_{x = x_\text{target}} &= \frac{\partial u_f(x)}{\partial x} \mid_{x = x_\text{target}}\\
-    \iff -abc_g \cdot e^{-bx_\text{target}} &= c_f\\
-    \iff x_\text{target} &=  -\dfrac{1}{b} \ln\left(-\dfrac{c_f}{c_g}\cdot\dfrac{1}{ab}\right)
-\end{align} In the example, we get an optimal dosage target (given perfect precision) of $x_\text{target} = 206.9 \ \text{kg}_\text{N} / \text{ha}$.
+    x_\text{target,PP} &= \text{arg}\max_x u(x) \\
+    \iff \frac{\partial u(x)}{\partial x} \mid_{x = x_\text{target,PP}} &= 0\\
+    \iff \frac{\partial u_g(x)}{\partial x} \mid_{x = x_\text{target,PP}} &= \frac{\partial u_f(x)}{\partial x} \mid_{x = x_\text{target,PP}}\\
+    \iff -abc_g \cdot e^{-bx_\text{target,PP}} &= c_f\\
+    \iff x_\text{target,PP} &=  -\dfrac{1}{b} \ln\left(-\dfrac{c_f}{c_g}\cdot\dfrac{1}{ab}\right)
+\end{align} In the example, we get an optimal dosage target (given perfect precision) of $x_\text{target,PP} = 206.9 \ \text{kg}_\text{N} / \text{ha}$.
 
 \begin{figure}
 \centering
@@ -47,7 +47,7 @@ Then the expected utility given this imprecise dosage $E[u(x=X(\mu, \sigma))]$ c
     &= c_g \cdot a \cdot e^{\frac{b^2 \sigma^2}{2}} e^{-b \mu} + c_g \cdot d - c_f \cdot \mu
 \end{align} The integral was solved using the excellent open source Computer Algebra System \emph{Maxima} \citep{maxima}.
 
-But $u(x)$ is not symmetrical around $x_\text{target}$, so the optimal mean $x_\text{target}(\sigma)$ of a normal distribution with $\sigma > 0$ is different from $x_\text{target}$ (see Figure 1 a and b).
+But $u(x)$ is not symmetrical around $x_\text{target,PP}$, so the optimal mean $x_\text{target}(\sigma)$ of a normal distribution with $\sigma > 0$ is different from $x_\text{target,PP}$ (see Figure 1 a and b).
 
 To calculate this optimal mean, the zero of the derivative of the expected utility is computed:
 
@@ -58,12 +58,12 @@ To calculate this optimal mean, the zero of the derivative of the expected utili
     \iff x_\text{target}(\sigma) &= \frac{b^2 \sigma^2 - 2 \ln\left(-\frac{c_f}{a b c_g}\right)}{2 b}
 \end{align}
 
-So the optimal mean of a normally distributed dosage is here linear to its variance $\sigma^2$. In the example, we get $x_\text{target}(\sigma = 50 \ \text{kg}_\text{N} / \text{ha}) = 220.4 \ \text{kg}_\text{N} / \text{ha}$, which is significantly higher than the optimal target given perfect precision.
+So the optimal mean of a normally distributed dosage is here linear to its variance $\sigma^2$. In the example, we get $x_\text{target,PP}(\sigma = 50 \ \text{kg}_\text{N} / \text{ha}) = 220.4 \ \text{kg}_\text{N} / \text{ha}$, which is significantly higher than the optimal target given perfect precision.
 
-The difference between the utility given precise dosage $u(x_\text{target})$ and this expected utility given imprecise dosage is the the expected value of perfect precision (EVPP), as illustrated in Figure 2 b):
+The difference between the utility given precise dosage $u(x_\text{target,PP})$ and this expected utility given imprecise dosage is the the expected value of perfect precision (EVPP), as illustrated in Figure 2 b):
 
 \begin{align}
-    \text{EVPP} &= u(x_\text{target}) - E[u(x=X(x_\text{target}(\sigma), \sigma))] \\
+    \text{EVPP} &= u(x_\text{target,PP}) - E[u(x=X(x_\text{target}(\sigma), \sigma))] \\
     &= \left(c_g \cdot \Biggl(a \cdot e^{-b \cdot -\dfrac{1}{b} \ln(-\dfrac{c_f}{c_g}\cdot\dfrac{1}{ab})} + d) - c_f
     \cdot -\dfrac{1}{b} \ln(-\dfrac{c_f}{c_g}\cdot\dfrac{1}{ab}\Biggr)\right) \\
     &= - \left(- c_g \cdot a \cdot e^{\frac{b^2 \sigma^2}{2}} e^{-b \frac{b^2 \sigma^2 - 2 \ln\left(-\frac{c_f}{a b

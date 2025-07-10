@@ -1,76 +1,77 @@
-\hypertarget{full-derivation-of-the-vop-formula-for-case-study-1-linear-costs-diminishing-marginal-productivity}{%
-\section*{\texorpdfstring{Full derivation of the VoP formula for \emph{Case Study 1: Linear Costs, Diminishing Marginal Productivity}}{Full derivation of the VoP formula for Case Study 1: Linear Costs, Diminishing Marginal Productivity}}\label{full-derivation-of-the-vop-formula-for-case-study-1-linear-costs-diminishing-marginal-productivity}}
+\hypertarget{full-derivation-of-the-vop-formula-for-23-illustrative-example-fertilization}{%
+\section*{\texorpdfstring{Full derivation of the VoP formula for \emph{2.3 Illustrative example: Fertilization}}{Full derivation of the VoP formula for 2.3 Illustrative example: Fertilization}}\label{full-derivation-of-the-vop-formula-for-23-illustrative-example-fertilization}}
 
-We model the relationship between fertilizer dosage $x$ and yield $g(x)$ as an exponential saturation function with 3 parameters $a$, $b$ and $d$:
+We model the relationship between fertilizer application rate $x$ and yield $y(x)$ as an exponential saturation function with 3 parameters $a$, $b$ and $d$:
 
 \begin{align}
-g(x) = a \cdot e^{-b x} + d
+y(x) = a \cdot e^{-b x} + d
 \end{align}
 
-The utility $u(x)$ is the profit, modeled as revenue $u_g(x)$ minus fertilizer costs $u_f(x)$, calculated using the harvest selling price $c_g$ and the fertilizer price $c_f$ (illustrated in Figure 1b and c):
+The objective function $\Pi(x)$ is the profit, modeled as revenue minus fertilizer costs, calculated using the harvest selling price $p$ and the fertilizer price $w$ (illustrated in Figure 1b and c):
 
 \begin{align}
-    u_g(x) &= c_g \cdot g(x) \\
-    u_f(x) &= c_f \cdot x\\
-    u(x) &= u_g(x) - u_f(x)
+\Pi(x) = p\cdot y(x) - w\cdot x
 \end{align}
 
 \begin{figure}
 \centering
 \includegraphics[width=15cm,height=15cm,keepaspectratio]{imgs/synplot1.png}
-\caption{Response model for the winter wheat case study. a) Yield response curve fitted to experimental data from the literature. b) Economic revenue from yield and fertilizer costs. c) The resulting economic response curve. d) Marginal costs and marginal gains from increasing fertilizer dosage by 1 kg per ha.}
+\caption{Response model for the fertilization example (with illustrative numerical values). a) Yield response curve. b) Economic balance: revenue from yield and fertilizer costs. c) The resulting economic response curve. d) Marginal costs and marginal gains from increasing fertilizer application rate by 1 unit.}
 \end{figure}
 
-The target fertilizer dosage $x_\text{target,PP}$ that maximizes profit is then calculated using the zero of the derivative with respect to $x$, i.e.~the fertilizer dosage, where the marginal costs exceed the marginal benefits as shown in Figure 1 d).
+The target fertilizer application rate $x^\ast_\text{target, PP}$ that maximizes profit (given perfect precision) is then calculated using the zero of the derivative with respect to $x$, i.e.~the fertilizer dosage, where the marginal costs exceed the marginal benefits as shown in Figure 1 d).
 
 \begin{align}
-    x_\text{target,PP} &= \text{arg}\max_x u(x) \\
-    \iff \frac{\partial u(x)}{\partial x} \mid_{x = x_\text{target,PP}} &= 0\\
-    \iff \frac{\partial u_g(x)}{\partial x} \mid_{x = x_\text{target,PP}} &= \frac{\partial u_f(x)}{\partial x} \mid_{x = x_\text{target,PP}}\\
-    \iff -abc_g \cdot e^{-bx_\text{target,PP}} &= c_f\\
-    \iff x_\text{target,PP} &=  -\dfrac{1}{b} \ln\left(-\dfrac{c_f}{c_g}\cdot\dfrac{1}{ab}\right)
-\end{align} In the example, we get an optimal dosage target (given perfect precision) of $x_\text{target,PP} = 206.9 \ \text{kg}_\text{N} / \text{ha}$.
+x^\ast_\text{target, PP} &= \text{arg}\max_x \Pi(x) \\
+\iff \frac{\partial \Pi(x)}{\partial x} \mid_{x = x^\ast_\text{target, PP}} &= 0\\
+\iff \frac{\partial py(x)}{\partial x} \mid_{x = x^\ast_\text{target, PP}} &= \frac{\partial wx}{\partial x} \mid_{x = x^\ast_\text{target, PP}}\\
+\iff -abp \cdot e^{-bx^\ast_\text{target, PP}} &= w\\
+\iff x^\ast_\text{target, PP} &=  -\dfrac{1}{b} \ln\left(-\dfrac{w}{abp}\right)
+\end{align}
 
 \begin{figure}
 \centering
 \includegraphics{imgs/synplot2.png}
-\caption{a) Probability distribution for imprecise dosage. b) Graphical representation of the calculation for the Expected Value of Perfect Precision (EVPP) as the difference between profits given precise and imprecise dosage.}
+\caption{Graphical representation of the calculations for the fertilization example (with illustrative numerical values). a) Probability distribution for imprecise application. b) The Expected Value of Perfect Precision (EVPP) as the difference between profits given precise and imprecise application.}
 \end{figure}
 
-Now we assume imprecise dosage as a normally distributed random variable $X \sim \mathcal{N}(\mu, \sigma)$ with mean $\mu$, standard deviation $\sigma$ and probability density function $f_X(x, \mu, \sigma)$. (Note: this neglects the fact that fertilizer dosage is always positive in reality.) This is illustrated in Figure 2 a) with an exemplary standard deviation of $\sigma = 50 \ \text{kg}_\text{N} / \text{ha}$.
-
-Then the expected utility given this imprecise dosage $E[u(x=X(\mu, \sigma))]$ can be calculated as follows:
+Now we model the application rate error as a normally distributed random variable $\mathcal{E} \sim \mathcal{N}(\mu, \sigma)$ with mean $\mu=0$, standard deviation $\sigma$, and probability density function $f_\mathcal{E}(\epsilon; \sigma)$. This error term is added to the target rate:
 
 \begin{align}
-    E[u(x=X(\mu, \sigma))] &= \int_{-\infty}^\infty u(x)\cdot f_X(x, \mu, \sigma) dx \\
-    &= \int_{-\infty}^\infty (c_g \cdot (a \cdot e^{-bx} +d) - c_f \cdot x) \frac{1}{\sqrt{2\pi\sigma^2} } e^{-\frac{(x-\mu)^2}{2\sigma^2}} dx\\
-    &= c_g \cdot a \cdot e^{\frac{b^2 \sigma^2}{2}} e^{-b \mu} + c_g \cdot d - c_f \cdot \mu
-\end{align} The integral was solved using the excellent open source Computer Algebra System \emph{Maxima} \citep{maxima}.
+X(x_\text{target}, \sigma) = x_\text{target} + \mathcal{E}(\sigma)
+\end{align}
 
-But $u(x)$ is not symmetrical around $x_\text{target,PP}$, so the optimal mean $x_\text{target}(\sigma)$ of a normal distribution with $\sigma > 0$ is different from $x_\text{target,PP}$ (see Figure 1 a and b).
+This is illustrated in Figure 2 a with an exemplary standard deviation.
+
+Then the expected profit given this imprecise application rate $E[\Pi(x=X(x_\text{target}, \sigma))]$ can be calculated as follows:
+
+\begin{align}
+E[u(x=X(x_\text{target}, \sigma))] &= \int_{-\infty}^\infty \Pi(x_\text{target} + \epsilon)\cdot f_\mathcal{E}(\epsilon; \sigma) d\epsilon\\
+&= \int_{-\infty}^\infty p a e^{-b(x_\text{target} + \epsilon)} f_\mathcal{E} d\epsilon + \int_{-\infty}^\infty p d f_\mathcal{E} d\epsilon - \int_{-\infty}^\infty w(x_\text{target} + \epsilon) f_\mathcal{E} d\epsilon\\
+&= p a e^{-b x_\text{target} + \frac{b^2\sigma^2}{2}} + pd - w x_\text{target}
+\end{align}
+
+But $\Pi(x)$ is not symmetrical around $x_\text{target}$, so the optimal mean $x^\ast_\text{target}(\sigma)$ of a normal distribution with $\sigma > 0$ is different from $x^\ast_\text{target, PP}$ (see Figure 1 a and b).
 
 To calculate this optimal mean, the zero of the derivative of the expected utility is computed:
 
 \begin{align}
-    x_\text{target}(\sigma) &= \text{arg}\max_{\mu} E[u(x=X(\mu, \sigma))] \\
-    \iff \frac{\partial E[u(x=X(\mu, \sigma))]}{\partial \mu} \mid_{ \mu = x_\text{target}(\sigma)} &= 0 \\
-    \iff  c_g \cdot a \cdot b \cdot e^{\frac{b^2 \sigma^2}{2}} e^{-b x_\text{target}(\sigma)} + c_f &= 0 \\
-    \iff x_\text{target}(\sigma) &= \frac{b^2 \sigma^2 - 2 \ln\left(-\frac{c_f}{a b c_g}\right)}{2 b}
+&x^\ast_\text{target}(\sigma) = \text{arg}\max_{x_\text{target}} E[u(x=X(x_\text{target}, \sigma))] \\
+\iff& \frac{\partial E[u(x=X(x_\text{target}, \sigma))]}{\partial \mu} \mid_{x_\text{target} = x^\ast_\text{target}(\sigma)} = 0 \\
+\iff&  p a b e^{\frac{b^2 \sigma^2}{2}} e^{-b x^\ast_\text{target}(\sigma)} + w = 0 \\
+\iff& x^\ast_\text{target}(\sigma) = \frac{b^2 \sigma^2 - 2 \ln\left(-\frac{w}{a b p}\right)}{2 b}\\
+\iff& x^\ast_\text{target}(\sigma) = \frac{1}{2}b\sigma^2 - \frac{1}{b} \ln\left(-\frac{w}{a b p}\right)
 \end{align}
 
-So the optimal mean of a normally distributed dosage is here linear to its variance $\sigma^2$. In the example, we get $x_\text{target,PP}(\sigma = 50 \ \text{kg}_\text{N} / \text{ha}) = 220.4 \ \text{kg}_\text{N} / \text{ha}$, which is significantly higher than the optimal target given perfect precision.
+So the optimal mean of a normally distributed dosage is here linear to its variance $\sigma^2$.
 
-The difference between the utility given precise dosage $u(x_\text{target,PP})$ and this expected utility given imprecise dosage is the the expected value of perfect precision (EVPP), as illustrated in Figure 2 b):
+The difference between the utility given precise dosage $\Pi(x^\ast_\text{target, PP})$ and this expected utility given imprecise dosage is the the expected value of perfect precision (EVPP), as illustrated in Figure 2 b):
 
 \begin{align}
-    \text{EVPP} &= u(x_\text{target,PP}) - E[u(x=X(x_\text{target}(\sigma), \sigma))] \\
-    &= \left(c_g \cdot \Biggl(a \cdot e^{-b \cdot -\dfrac{1}{b} \ln(-\dfrac{c_f}{c_g}\cdot\dfrac{1}{ab})} + d) - c_f
-    \cdot -\dfrac{1}{b} \ln(-\dfrac{c_f}{c_g}\cdot\dfrac{1}{ab}\Biggr)\right) \\
-    &= - \left(- c_g \cdot a \cdot e^{\frac{b^2 \sigma^2}{2}} e^{-b \frac{b^2 \sigma^2 - 2 \ln\left(-\frac{c_f}{a b
-    c_g}\right)}{2 b}} + c_g \cdot d - c_f \cdot \frac{b^2 \sigma^2 - 2 \ln\left(-\frac{c_f}{a b c_g}\right)}{2 b}\right) \\
-    &= \frac{b c_{f} \sigma^{2}}{2}
+\text{EVPP} &= \Pi(x^\ast_\text{target, PP}) - E[\Pi(x=X(x^\ast_\text{target}(\sigma), \sigma))]\\
+&= \left(p  (a \cdot e^{-b \cdot -\dfrac{1}{b} \ln\left(-\dfrac{w}{abp}\right)} + d) - w \cdot -\dfrac{1}{b} \ln\left(-\dfrac{w}{abp}\right)\right)\\
+&= - \left(- p \cdot a \cdot e^{\frac{b^2 \sigma^2}{2}} e^{-b \frac{b^2 \sigma^2 - 2 \ln\left(-\frac{w}{a b p}\right)}{2 b}} + p \cdot d - w \cdot \frac{b^2 \sigma^2 - 2 \ln\left(-\frac{w}{a b p}\right)}{2 b}\right)\\
+&= \frac{1}{2} b w \sigma^{2}
 \end{align}
 
-This expression drastically simplifies in Eq. 20, so in the end, the EVPP only depends on the exponential coefficient
-$b$ in the fertilizer response, the cost of fertilizer $c_f$ and the variance of the fertilization dosage $\sigma^2$,
-and it does so linearly. Interestingly, the the EVPP neither depends on the yield given fertilizer saturation ($a$ and $d$) nor on the harvest selling price $c_g$.
+This expression drastically simplifies, so in the end, the EVPP only depends on the exponential coefficient $b$ in the fertilizer response, the cost of fertilizer $w$ and the variance of the fertilization dosage $\sigma^2$, and it does so linearly. Interestingly, the the EVPP does neither depend on the yield given fertilizer saturation ($a$ and $d$) nor on the harvest selling price $p$.

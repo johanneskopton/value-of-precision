@@ -6,7 +6,7 @@ $$
 y(x) = a \cdot e^{-b x} + d
 $$
 
-The objective function $\Pi(x)$ is the profit, modeled as revenue minus fertilizer costs, calculated using the harvest selling price $p$ and the fertilizer price $w$ (illustrated in Figure 1b and c):
+The objective function $\Pi(x)$ is the profit, modeled as revenue minus fertilizer costs, calculated using the harvest selling price $p$ and the fertilizer price $w$ (illustrated in Figure 1b and d):
 
 $$
 \Pi(x) = p\cdot y(x) - w\cdot x
@@ -16,10 +16,10 @@ $$
 <p align="center">
 <img alt="Response model for the fertilization example (with illustrative numerical values). a) Yield response curve. b) Economic balance: revenue from yield and fertilizer costs. c) The resulting economic response curve. d) Marginal costs and marginal gains from increasing fertilizer application rate by 1 unit." src="imgs/synplot1.png" height="600"></p>
 
-> Response model for the fertilization example (with illustrative numerical values). a) Yield response curve. b) Economic balance: revenue from yield and fertilizer costs. c) The resulting economic response curve. d) Marginal costs and marginal gains from increasing fertilizer application rate by 1 unit.
+> Response model for the fertilization example (with illustrative numerical values). a) Yield response curve. b) Economic balance: revenue from yield and fertilizer costs. c) Marginal costs and marginal gains from increasing fertilizer application rate by 1 unit. d) The resulting economic response curve. 
 
 
-The target fertilizer application rate $x^\ast_\text{target, PP}$ that maximizes profit (given perfect precision) is then calculated using the zero of the derivative with respect to $x$, i.e. the fertilizer dosage, where the marginal costs exceed the marginal benefits as shown in Figure 1 d).
+The target fertilizer application rate $x^\ast_\text{target, PP}$ that maximizes profit (given perfect precision) is then calculated using the zero of the derivative with respect to $x$, i.e. the fertilizer dosage, where the marginal costs exceed the marginal benefits as shown in Figure 1 c).
 
 $$
 x^\ast_\text{target, PP} = \text{arg}\max_x \Pi(x) 
